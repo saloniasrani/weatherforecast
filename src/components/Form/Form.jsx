@@ -1,14 +1,16 @@
 import React from "react";
 import "./Form.css";
-function form() {
+function form(props) {
+  const { getData } = props;
   return (
     <div>
-      <form>
+      <form onSubmit={getData}>
         <input
+          name="city"
           aria-label="location"
           type="text"
-          className="input"
-          placeholder="Search for Coordinates"
+          className="input-box"
+          placeholder="Search for Country"
           required
         />
 
