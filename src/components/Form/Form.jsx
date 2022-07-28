@@ -4,13 +4,13 @@ function form() {
   return (
     <div>
       <form>
-        {/* <input
+        <input
           aria-label="location"
           type="text"
-          className={`${styles.input} form-control`}
+          className={`${"input"} form-control`}
           placeholder="Search for location"
           required
-        /> */}
+        />
 
         <button type="submit">SEARCH</button>
       </form>
