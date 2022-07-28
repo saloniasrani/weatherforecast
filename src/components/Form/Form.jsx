@@ -7,8 +7,8 @@ function form() {
         <input
           aria-label="location"
           type="text"
-          class="input"
-          placeholder="Search for location"
+          className="input"
+          placeholder="Search for Coordinates"
           required
         />
 
