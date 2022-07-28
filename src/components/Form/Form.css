@@ -1,3 +1,9 @@
+.container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .input-box {
   border-radius: var(--main-border-radius);
   margin-bottom: 1rem;

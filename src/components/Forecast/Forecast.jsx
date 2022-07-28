@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./Forecast.css";
 function Forecast(props) {
   if (props.weather != null) {
     let city = props.weather.city;
@@ -7,11 +7,27 @@ function Forecast(props) {
     let sky = props.weather.cloud;
     let country = props.weather.country;
     return (
-      <div>
-        <p>{city}</p>
-        <p>{temp}</p>
-        <p>{sky}</p>
-        <p>{country}</p>
+      <div className="container">
+        <div className="flex1">
+          <p className="sky">{sky}</p>
+          <p className="temp">{temp}&deg;</p>
+        </div>
+
+        <div className="flex2">
+          <p> {new Date().toDateString()}</p>
+          <div>
+            <img
+              width="15px"
+              height="17px"
+              src={require("./Images/location.png")}
+              alt="location"
+            />
+
+            <span className="city">{city} </span>
+
+            <span className="country">, {country}</span>
+          </div>
+        </div>
       </div>
     );
   }

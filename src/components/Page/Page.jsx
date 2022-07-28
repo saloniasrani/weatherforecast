@@ -5,14 +5,9 @@ import Header from "../Header/Header";
 import Loader from "../Loader/Loader";
 import Form from "../Form/Form";
 import Forecast from "../Forecast/Forecast";
-// calc(props){
-//   return(
-//     props-273.15
-//   )
-// }
+
 const APIkey = "cb66c1364675a3e944528ecd08b8638d";
 const Page = () => {
-  // const [coordinates, setCoordinates] = useState("");
   const [weather, setWeather] = useState(null);
 
   const [isLoading, setLoading] = useState(false);
@@ -20,6 +15,7 @@ const Page = () => {
     e.preventDefault();
 
     setLoading(true);
+    setWeather([]);
     let cityname = e.target.city.value;
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${APIkey}`
@@ -42,12 +38,12 @@ const Page = () => {
   };
 
   return (
-    <Fragment>
+    <div className="box">
       <Header />
       <Form getData={getData} />
-      {isLoading && <Loader />}
-      <Forecast weather={weather} />
-    </Fragment>
+
+      {isLoading ? <Loader /> : <Forecast weather={weather} />}
+    </div>
   );
 };
 

@@ -1,25 +1,36 @@
-.input {
+.container {
+  display: flex;
+  justify-self: center;
+  /* align-items: center; */
+
   border-radius: var(--main-border-radius);
-  margin-bottom: 1rem;
+  box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
+  background-color: var(--bg-color--card);
+  color: var(--main-text-color);
+  width: 600px;
+
+  gap: 50px;
+  padding: 20px;
+
+  background-image: url("./Images/location.png");
+  background-size: cover;
+}
+.flex2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  margin-bottom: 20px;
+}
+.sky {
+  margin: 10px;
+}
+.temp {
+  margin: 10px;
+  font-size: 70px;
+  text-align: left;
 }
 
-.button {
-  border: none;
-  border-radius: var(--main-border-radius);
-  padding: 0.65rem;
-  background-image: var(--gradient);
-  color: var(--main-text-color);
-  font-weight: 700;
-  box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);
-  cursor: pointer;
-  line-height: initial;
-  width: 100%;
-  height: 38px;
-}
-
-.button:hover {
-  color: var(--main-text-color);
-  -webkit-transform: scale(0.95);
-  -ms-transform: scale(0.95);
-  transform: scale(0.95);
+.city {
+  margin-left: 5px;
 }
