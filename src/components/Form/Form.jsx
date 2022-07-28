@@ -7,7 +7,7 @@ function form() {
         <input
           aria-label="location"
           type="text"
-          className={`${"input"} form-control`}
+          class={`${"input"} form-control`}
           placeholder="Search for location"
           required
         />
