@@ -1,7 +1,6 @@
-import React, { useState, Fragment } from "react";
+import React, { useState } from "react";
 import "./Page.css";
 import Header from "../Header/Header";
-// import CurrentDay from "../CurrentDay/CurrentDay";
 import Loader from "../Loader/Loader";
 import Form from "../Form/Form";
 import Forecast from "../Forecast/Forecast";
@@ -26,9 +25,11 @@ const Page = () => {
           cloud: actualData.weather[0].main,
           temp: actualData.main.temp,
           city: actualData.name,
-          country: actualData.sys.country
+          country: actualData.sys.country,
+          image: actualData.weather[0].icon
         });
       })
+
       .catch((err) => {
         console.log(err.message);
       })

@@ -12,15 +12,13 @@
   gap: 50px;
   padding: 20px;
 
-  background-image: url("./Images/location.png");
+  /* background-image:"./Images/location.png"; */
   background-size: cover;
 }
 .flex2 {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-
-  margin-bottom: 20px;
+  align-content: flex-end;
+  gap: 20px;
 }
 .sky {
   margin: 10px;
