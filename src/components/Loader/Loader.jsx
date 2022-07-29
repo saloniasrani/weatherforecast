@@ -3,7 +3,7 @@ import React from "react";
 import "./Loader.css";
 
 const Loader = () => (
-  <div class="box">
+  <div className="box">
     <svg
       version="1.1"
       id="Layer_1"

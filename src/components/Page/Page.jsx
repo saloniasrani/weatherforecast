@@ -8,26 +8,30 @@ import Forecast from "../Forecast/Forecast";
 const APIkey = "cb66c1364675a3e944528ecd08b8638d";
 const Page = () => {
   const [weather, setWeather] = useState(null);
-
+  const [iserror, setError] = useState(false);
   const [isLoading, setLoading] = useState(false);
   const getData = (e) => {
     e.preventDefault();
-
     setLoading(true);
-    setWeather([]);
+    setWeather(null);
+    setError(false);
     let cityname = e.target.city.value;
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${APIkey}`
     )
       .then((response) => response.json())
       .then((actualData) => {
-        setWeather({
-          cloud: actualData.weather[0].main,
-          temp: actualData.main.temp,
-          city: actualData.name,
-          country: actualData.sys.country,
-          image: actualData.weather[0].icon
-        });
+        if (actualData.cod == 404) {
+          setError(true);
+        } else {
+          setWeather({
+            cloud: actualData.weather[0].main,
+            temp: actualData.main.temp,
+            city: actualData.name,
+            country: actualData.sys.country,
+            image: actualData.weather[0].icon
+          });
+        }
       })
 
       .catch((err) => {
@@ -43,7 +47,13 @@ const Page = () => {
       <Header />
       <Form getData={getData} />
 
-      {isLoading ? <Loader /> : <Forecast weather={weather} />}
+      {isLoading ? (
+        <Loader />
+      ) : iserror ? (
+        "City not Found!"
+      ) : (
+        <Forecast weather={weather} />
+      )}
     </div>
   );
 };
